@@ -13,6 +13,12 @@ Spacely includes software, firmware, and hardware components distributed across 
 * **py-libs-common:** Shared low-level python libraries.
 * **spacely-caribou-common-blocks:** Common firmware blocks for use with a Spacely-Caribou flow. 
 
+## Install Spacely
+
+Follow the instructions in the docs to download the appropriate repositories and install dependencies.
+
+When you're done, see the ExampleASIC folder in this repository for a simple test case to check your install is correct.
+
 ## Contribute to the Spacely Project
 
 Spacely is an open-source project which benefits from community engagement. Submit an issue on any Spacely Project repo, or contact the developers for more information about collaborating.
