@@ -21,8 +21,10 @@ When you're done, see the ExampleASIC folder in this repository for a simple tes
 
 ## Contribute to the Spacely Project
 
-Spacely is an open-source project which benefits from community engagement. Submit an issue on any Spacely Project repo, or contact the developers for more information about collaborating.
+Spacely is an open-source project which benefits from community engagement. Submit an issue on any Spacely Project repo, or contact the developers at _SpacelyDevelopers [аt] fnal [dot] gov_ for more information about collaborating.
 
 ## Cite the Spacely Project
 
-If Spacely is useful in your research, please cite our publication: (TBA)
+If Spacely is useful in your research, please cite our publication:
+
+Quinn, A. (2024). An Open-Source Framework for Rapid Validation of Scientific ASICs. https://arxiv.org/abs/2406.15181
