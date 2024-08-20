@@ -8,7 +8,9 @@ However, unlike a consumer using TCP/IP, a test engineer typically must develop 
 
 Consider the simple task of sending a hexadecimal word (0xDEADBEEF) over a SPI link to a DUT. The figure below presents four approaches to the problem, with different tool stacks (a-d). 
 
-![alt text](https://github.com/SpacelyProject/spacely-docs/figures/AbstractionApproaches.PNG "Abstraction Approaches")
+<p align="center">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/AbstractionApproaches.PNG" width="600">
+</p>
 
 Approach (a) is clearly nonsensical. Who would build an entire hardware block just to send one specific word? (b) is more reasonable, but still likely requires a re-compilation of a C++ codebase in order to change the word being tested. (c) removes this requirement by shifting the application-specific information to Python, a high-level interpreted language. (d) removes application-specific information from the codebase entirely; the user may input any test value they choose. 
 
@@ -58,8 +60,9 @@ In the example up until now, we have considered that the spi data (0xDEADBEEF) i
 Fortunately, Spacely provides a way around this through Arbitrary Pattern Generation. The idea is that SPI, serial, I2C, etc are really just application-specific instances of a much more general arbitrary protocol, in which *N* distinct digital outputs are modulated with a defined phase relationship, and *N* distinct inputs are recorded synchronously. Using this abstraction, a SPI write can be represented as a list of *K* samples, where each sample describes the state of the *pico* and *cs* signals at a single SPI clock rising edge. 
 
 Our stack is now:
-
-![alt text](https://github.com/SpacelyProject/spacely-docs/figures/AbstractionApproaches_APG.PNG "Abstraction with APG")
+<p align="center">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/AbstractionApproaches_APG.PNG" width="400">
+</p>
 
 Arbitrary Pattern Generation is provided in the Spacely-Caribou flow by the [Arbitrary_Pattern_Generator](https://github.com/SpacelyProject/spacely-caribou-common-blocks/tree/main/Arbitrary_Wave_Generator) firmware block, and in the NI PXI flow by the [PatternRunner](https://github.com/SpacelyProject/spacely/blob/main/PySpacely/src/pattern_runner.py) Spacely class. 
 
