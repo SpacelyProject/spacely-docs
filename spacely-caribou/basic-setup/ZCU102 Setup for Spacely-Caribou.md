@@ -41,7 +41,7 @@ If you are using a CaR board, supply external power (12 V / 1 A) to the CaR boar
 Ensure that ZCU102 SW6 is set to boot from SD.
 
 <p align="center">
-<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/spacely-caribou/basic-setup/ZCU102_SW6_Boot_From_SD.png" width="500">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/spacely-caribou/basic-setup/ZCU102_SW6_Boot_from_SD.png" width="300">
 </p>
 
 Finally, power on the ZCU102. 
