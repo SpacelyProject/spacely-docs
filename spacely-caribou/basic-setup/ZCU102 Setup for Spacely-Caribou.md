@@ -57,13 +57,14 @@ When the ZCU102 boots, its ethernet interface. We must log into the ZCU102 using
    1. Bps/Par/Bits = 115200 8N1
    2. Hardware Flow Control = No 
    3. Software Flow Control = No 
-4. Press enter. A login prompt for the ZCU102 should appear. If it does not, then retry with a different /dev/ttyUSB device.
-5. The login is "petalinux".
-6. If this is your first time booting the system, you will be prompted to set a password. Otherwise, the password is whatever you set on the first time you booted the system. 
-7. Once you have entered the password, you should have terminal access to the ZCU102. Enter the command **sudo ifconfig eth0 192.168.1.24** to enable the ethernet interface and set the ZCU102's IP address to 192.168.1.24
-8. Exit minicom by pressing (Ctrl-A + X)
-9. From the host PC, check that you were successful by attempting to SSH to the ZCU102: **ssh petalinux@192.168.1.24**
-10. If this is not the first time you have booted petalinux, you may see a warning with the phrase "Remote Host Identification has Changed". If you see this, run the command **ssh-keygen -R 192.168.1.24** on the host PC. 
+4. Press enter. You should now see some text appear beginning with "xilinx-zcu102..." which indicates you have connected to the ZCU102 over serial. If you still don't see any text, then retry with a different /dev/ttyUSB device.
+5. You may be prompted to log in to the system:
+   1. The login is "petalinux".
+   2. If this is your first time booting the system, you will be prompted to set a password. Otherwise, the password is whatever you set on the first time you booted the system. 
+6. Once you are logged in, you should have terminal access to the ZCU102. Enter the command **sudo ifconfig eth0 192.168.1.24** to enable the ethernet interface and set the ZCU102's IP address to 192.168.1.24
+7. Exit minicom by pressing (Ctrl-A + X)
+8. From the host PC, check that you were successful by attempting to SSH to the ZCU102: **ssh petalinux@192.168.1.24**
+9. If this is not the first time you have booted petalinux, you may see a warning with the phrase "Remote Host Identification has Changed". If you see this, run the command **ssh-keygen -R 192.168.1.24** on the host PC. 
 
 
 ## Build Peary on the ZCU102
