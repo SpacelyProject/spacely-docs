@@ -1,7 +1,7 @@
 # CaR Board Specifications
 
 
-## Power Supplies
+## Power Supplies (PWR_OUT)
 
 | Specification | Value |
 | --- | --- |
@@ -9,53 +9,53 @@
 | **Voltage Range [V]**| 0.8 - 3.6 |
 
 
-## Voltage References
+## Voltage References (BIAS)
 
 | Specification | Value |
 | --- | --- |
 | **# of Channels** |  32 |
 | **Voltage Range [V]**| 0 - 4 |
 
-## Current References
+## Current References (CUR)
 
 | Specification | Value |
 | --- | --- |
 | **# of Channels** |  8 |
 | **Current Range [A]**| 0 - 0.001 |
 
-## Slow ADC Channels
+## Slow ADC Channels (VOL_IN)
 
 | Specification | Value |
 | --- | --- |
 | **# of Channels** |  8 |
-| ** Component** | ADS7828 |
+| **Component** | ADS7828 |
 | **Voltage Range [V]**| 0 - 4 |
 | **Input Capacitance**| ~ 1 nF |
 
 Note: The input capacitance of slow ADC channels is dominated by a 1nF filter cap on the CaR board. The input capacitance of the ADS7828 alone is 25 pF. 
 
 
-## Fast ADC Channels
+## Fast ADC Channels (ADC_IN)
 
 | Specification | Value |
 | --- | --- |
 | **# of Channels** |  16 |
 | **Voltage Range [V]**| 0 - 1.0 |
 
-## Injection Pulsers
+## Injection Pulsers (INJ_OUT)
 
 ## Full-Duplex GTx Links
 
-## LVDS Links
+## LVDS Links (LVDS)
 
-## CMOS Outputs
+## CMOS Outputs (CMOS_OUT)
 
 | Specification | Value |
 | --- | --- |
 | **# of Channels** |  10 |
 | **CMOS High Voltage [V]**| 0.8 - 3.6 (adjustable) |
 
-## CMOS Inputs
+## CMOS Inputs (CMOS_IN)
 
 | Specification | Value |
 | --- | --- |
@@ -65,3 +65,5 @@ Note: The input capacitance of slow ADC channels is dominated by a 1nF filter ca
 ## Programmable Clock Generator
 
 Si5345, programmable using ClockBuilder Pro + Peary.
+
+Output Clocks 2 and 4 are routed to the SEARAY connector.
