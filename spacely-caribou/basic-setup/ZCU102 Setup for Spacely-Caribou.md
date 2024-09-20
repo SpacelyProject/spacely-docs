@@ -49,7 +49,19 @@ Finally, power on the ZCU102.
 
 ## Enable the ZCU102 Ethernet Connection 
 
-When the ZCU102 boots, its ethernet interface. We must log into the ZCU102 using a serial console, such as minicom, in order to turn on this interface.
+When the ZCU102 boots, its ethernet interface is not enabled. We must log into the ZCU102 using a serial console in order to turn on this interface before we can SSH into the ZCU102.
+
+### Connect to ZCU102 UART Interface (Windows)
+1. Install the latest UART-to-USB drivers from SiLabs (CP210x Windows Universal) https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads 
+2. Install Tera Term (https://teratermproject.github.io/index-en.html)
+3. When you plug in the UART interface (previous step) you should see several new COM ports appear. Select the one with the lowest number to connect using Tera Term, and set the following parameters:
+    1. Speed: 115200
+	2. Data:  8 bit
+	3. Parity: None
+	4. Stop Bits: 1 bit
+	5. Flow Control: none
+
+### Connect to ZCU102 UART Interface (Linux)	
 
 1. Ensure that you have **dialout** group permissions (or equivalent) to access the UART hardware interface.
 2. Connect to the ZCU102 with minicom: **minicom -D /dev/ttyUSB0** (If ttyUSB0 does not work, your ZCU may be available on ttyUSB1.)
@@ -57,14 +69,59 @@ When the ZCU102 boots, its ethernet interface. We must log into the ZCU102 using
    1. Bps/Par/Bits = 115200 8N1
    2. Hardware Flow Control = No 
    3. Software Flow Control = No 
-4. Press enter. You should now see some text appear beginning with "xilinx-zcu102..." which indicates you have connected to the ZCU102 over serial. If you still don't see any text, then retry with a different /dev/ttyUSB device.
-5. You may be prompted to log in to the system:
+   
+   
+### Log in and Enable Ethernet
+1. Once you've connected with your serial terminal, press enter. You should now see some text appear beginning with "xilinx-zcu102..." which indicates you have connected to the ZCU102 over serial. If you still don't see any text, then retry with a different /dev/ttyUSB device or COM port.
+2. You may be prompted to log in to the system:
    1. The login is "petalinux".
    2. If this is your first time booting the system, you will be prompted to set a password. Otherwise, the password is whatever you set on the first time you booted the system. 
-6. Once you are logged in, you should have terminal access to the ZCU102. Enter the command **sudo ifconfig eth0 192.168.1.24** to enable the ethernet interface and set the ZCU102's IP address to 192.168.1.24
-7. Exit minicom by pressing (Ctrl-A + X)
-8. From the host PC, check that you were successful by attempting to SSH to the ZCU102: **ssh petalinux@192.168.1.24**
-9. If this is not the first time you have booted petalinux, you may see a warning with the phrase "Remote Host Identification has Changed". If you see this, run the command **ssh-keygen -R 192.168.1.24** on the host PC. 
+3. Once you are logged in, you should have terminal access to the ZCU102. Enter the command **sudo ifconfig eth0 192.168.1.24** to enable the ethernet interface and set the ZCU102's IP address to 192.168.1.24
+4. Exit minicom by pressing (Ctrl-A + X)
+
+
+### Set up USB-to-Ethernet Adapter (Windows)
+1. In Network Settings, locate the network that corresponds to your USB-to-Ethernet Adapter.
+2. Assign the following settings:
+   1. IPv4 Address: 192.168.1.10
+   2. Subnet Prefix Length: 24
+   3. IPv4 Gateway: 192.168.0.0
+
+### Set up USB-to-Ethernet Adapter (Linux)
+
+On the Linux box (cmos.fnal.gov, metal.fnal.gov, etc) run the command:
+```
+/sbin/ip a
+```
+It should return something like:
+```
+3: enp0s20f0u6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq state UP group default qlen 1000
+		link/ether a0:ce:c8:5e:c5:31 brd ff:ff:ff:ff:ff:ff
+```
+Copy the following content:
+``` 
+IPADDR="192.168.1.10"
+NETWORK="192.168.0.0"
+NETMASK="255.255.0.0"
+DEVICE=enp0s20f0u6
+HWADDR="A0:CE:C8:5E:C5:31"
+ONBOOT=yes
+```
+in a file named /etc/sysconfig/network-scripts/ifcfg-enp0s20f0u6
+
+Reboot the Linux box
+
+Run again /sbin/ip a it should have associated the IP 192.168.1.10 to the dongle:
+```
+3: enp0s20f0u6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq state UP group default qlen 1000
+	link/ether a0:ce:c8:5e:c5:31 brd ff:ff:ff:ff:ff:ff
+	inet 192.168.1.10/16 brd 192.168.255.255 scope global noprefixroute enp0s20f0u6
+```
+
+
+### SSH to the ZCU102
+From the host PC, check that you were successful by attempting to SSH to the ZCU102: **ssh petalinux@192.168.1.24**
+If this is not the first time you have booted petalinux, you may see a warning with the phrase "Remote Host Identification has Changed". If you see this, run the command **ssh-keygen -R 192.168.1.24** on the host PC. 
 
 
 ## Build Peary on the ZCU102
