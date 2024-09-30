@@ -14,7 +14,9 @@
 | Specification | Value |
 | --- | --- |
 | **# of Channels** |  32 |
+| **Component** | DAC7678 |
 | **Voltage Range [V]**| 0 - 4 |
+| **Short Circuit Output Current [mA]**| 25 |
 
 ## Current References (CUR)
 
