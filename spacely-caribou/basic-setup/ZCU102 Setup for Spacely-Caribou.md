@@ -121,6 +121,9 @@ Run again /sbin/ip a it should have associated the IP 192.168.1.10 to the dongle
 
 ### SSH to the ZCU102
 From the host PC, check that you were successful by attempting to SSH to the ZCU102: **ssh petalinux@192.168.1.24**
+
+**Note:** If you are connected to a VPN, you may have to disconnect from the VPN to prevent it from interfering with the local IP connection to the ZCU102.
+
 If this is not the first time you have booted petalinux, you may see a warning with the phrase "Remote Host Identification has Changed". If you see this, run the command **ssh-keygen -R 192.168.1.24** on the host PC. 
 
 
