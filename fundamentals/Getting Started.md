@@ -1,6 +1,24 @@
 # Getting Started with Spacely 
 
-Once you've installed Spacely, the first step is to create your **project-specific configuration files.** These files will contain all of the configuration information, test routines, and helper functions that are necessary for Spacely to interact with your particular ASIC. 
+## Running Spacely for the First Time
+
+1. Open the file *Master_Config.py* in the folder *spacey/PySpacely*, and ensure that the global variable TARGET is set to the string "ExampleASIC".
+2. Run the appropriate startup script based on your operating system (*Spacely.ps1* for Windows or *Spacely.sh* for Linux). You should see the Spacely startup banner appear, as shown below. Note that the targeted ASIC is "ExampleASIC". 
+<p align="center">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/ExampleASIC_Startup.PNG" width="700">
+</p>
+3. For now, type **'n'** and press enter to skip instrument initialization. 
+4. A prompt (**>**) will appear. At the prompt, type **~r0** and press enter. 
+5. The message below should be displayed:
+```
+" `*%*` CONGRATS! `*%*` (Spacely is installed correctly.) "
+```
+
+If you see this message, Spacely is installed correctly and you may proceed. If not, return to [Installing Spacely](</fundamentals/Installing Spacely.md>) to correct any errors. 
+
+## Project-Specific Configuration Files
+
+With Spacely installed, you are now ready to start writing the code that will control your ASIC! the first step is to create your **project-specific configuration files.** These files will contain all of the configuration information, test routines, and helper functions that are necessary for Spacely to interact with your particular ASIC. 
 
 The format and contents of these files are described in later sections. You can write these files from scratch, or copy the equivalent files from the folder spacely-docs/ExampleASIC as a template. 
 
@@ -11,14 +29,7 @@ Spacely requires a special naming convention in order to locate and load your fi
 3. MyASIC/MyASIC_Subroutines.py -- (Optional) Helper functions to be used by MyASIC_Routines.py
 4. MyASIC/MyASICiospec.txt -- Defines the I/O specification (digital pinout) of your ASIC test stand. 
 
-After creating these files, you must open the file Master_Config.py in the spacey/PySpacely, and change the global variable TARGET to the string "MyASIC" to instruct Spacely to target your project. 
+Once you've created these files, be sure to go back to *Master_Config.py* and change the TARGET from "ExampleASIC" to "MyASIC". 
 
-# Next Steps 
 
-Learn about each of these file types and how you can use them to start testing your ASIC:
-
-**MyASIC_Config:**
-
-**MyASIC_Routines/Subroutines:**
-
-**MyASIC_iospec:** Learn more about how IOSPEC files are used to define the digital interface to your ASIC and read or write Arbitrary Patterns: (Link TBA)
+**Next Steps:** Return to [Spacely Fundamentals](</fundamentals/README.md>) to learn more about what you should write inside these files.

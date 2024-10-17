@@ -133,8 +133,7 @@ END
  
  Some Glue Converter functions can be accessed dynamically by typing **gcshell** in the main Spacely terminal. 
  
- Source code for the Glue Converter is found here:
- https://github.com/SpacelyProject/py-libs-common/blob/main/nitoolbox/src/fnal_ni_toolbox/glue_converter.py
+ For more information, see: [The Glue Converter](</special-topics/The Glue Converter.md>)
  
  # Pattern Runner Functionality
  The Pattern Runner is responsible for ingesting Glue Waves which describe ASIC inputs and sending them to hardware. It is also responsible for capturing ASIC outputs and transcribing them to a Glue Wave file. The Pattern Runner deals exclusively with Glue Waves, so it is typically necessary to use a Glue Converter to prepare its inputs. 

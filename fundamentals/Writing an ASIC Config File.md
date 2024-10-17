@@ -111,6 +111,6 @@ DEFAULT_IOSPEC = ".\\spacely-asic-config\\SPROCKET2\\sprocket2_iospec.txt"
 DEFAULT_FPGA_BITFILE_MAP = {"PXI1Slot4":"NI7972_NI6583_40MHz"}
 ```
 
-For information on supported bitfiles, see [NI-PXI Glue Firmware](/special-topics/NI-PXI Glue Firmware.md)
+For information on supported bitfiles, see [NI-PXI Glue Firmware](</special-topics/NI-PXI Glue Firmware.md>)
 
 **USE_NI** -- Set this variable to true to automatically initialize an NI Pattern Runner. 
