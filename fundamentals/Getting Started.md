@@ -7,11 +7,13 @@
 <p align="center">
 <img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/ExampleASIC_Startup.PNG" width="700">
 </p>
-3. For now, type **'n'** and press enter to skip instrument initialization. 
+
+3. For now, type **n** and press enter to skip instrument initialization. 
 4. A prompt (**>**) will appear. At the prompt, type **~r0** and press enter. 
 5. The message below should be displayed:
+
 ```
-" `*%*` CONGRATS! `*%*` (Spacely is installed correctly.) "
+ `*%*` CONGRATS! `*%*` (Spacely is installed correctly.) 
 ```
 
 If you see this message, Spacely is installed correctly and you may proceed. If not, return to [Installing Spacely](</fundamentals/Installing Spacely.md>) to correct any errors. 
