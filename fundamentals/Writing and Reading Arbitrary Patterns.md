@@ -10,7 +10,7 @@
 # Diagram
  
  <p align="center">
-<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/gc-pr-diagram.PNG" width="600">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/gc-pr-diagram.PNG" width="800">
 </p>
  
 # Example Code
@@ -41,7 +41,7 @@
 # The Vector APG Model
 
   <p align="center">
-<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/vector-apg.PNG" width="600">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/vector-apg.PNG" width="800">
 </p>
 
 For both Spacely-Caribou and NI-PXI, the underlying hardware that supports arbitrary pattern generation can be conceptualized as a shift register. The collective state of all of the digital output pins of the Arbitrary Pattern Generator (APG) during a single clock cycle can be represented by a single integer (which we can call a vector). If the 0th bit of the vector is zero, output pin 0 is low; if the 0th bit of the vector is one, output pin 0 is high. At each clock cycle, the APG retrieves a new vector from its internal shift register, updating the state of all output pins. 
@@ -65,10 +65,11 @@ Each line within the IOSPEC file describes to a specific signal, formatted as:
 {name}, {I/O}, {position}, {optional default value}
 ```
 Where:
-{name} (string) represents the signal's identifier in software (i.e. "S_CLK").
-{I/O} (one char, I or O) indicates whether it is an input to or an output from the ASIC.
-{position} (integer) refers to the pin number of this signal.
-{optional default value} (integer, 1 or 0) is used when no signal change occurs.
+
+- {name} (string) represents the signal's identifier in software (i.e. "S_CLK").
+- {I/O} (one char, I or O) indicates whether it is an input to or an output from the ASIC.
+- {position} (integer) refers to the pin number of this signal.
+- {optional default value} (integer, 1 or 0) is used when no signal change occurs.
 
 ### Hardware definitions for Caribou and NI-PXI
 
@@ -80,11 +81,15 @@ END
 ``` 
 
 The meanings of these fields depend on which hardware platform you are using:
+
 **For Spacely-Caribou**
+
 - The {FPGA} field will always be "Caribou"
 - The {I/O} field will be the name of the APG firmware block that you wish to control. This should be identical to the prefix of the registers associated with that APG in your memory map. For example, if the run register is "apg1_run", this field will be "apg1".
 - The {INTERFACE} field will be either "read" or "write". All Spacely-Caribou APGs have full-duplex read & write interfaces.
+
 **For NI-PXI**
+
 - The {FPGA} field is the name of the NI-PXI slot in which your FPGA is installed, for example "PXISlot4"
 - The {I/O} field is the part number of the NI I/O card attached to the FPGA, for example "NI6583"
 - The {INTERFACE} field is a string which is specific to the I/O card, and identifies one of the interfaces on that card. For example, on the NI6583 card, one interface is "se_io" referencing the single-ended I/Os available on that card.
