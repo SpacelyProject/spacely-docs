@@ -18,7 +18,7 @@ Each instrument, at minimum, has a "type" field which describes what type of ins
 | Oscilloscope    | Oscilloscope | type, io |
 | AWG    | Arbitrary Wave Generator | type, io |
 | Supply    | Generic (non-NI) Power Supply | type, io |
-| Caribou   | Caribou System | type, io |
+| Caribou   | Caribou System | type, host, port, device |
 
 
 | Field | Description |
@@ -34,7 +34,8 @@ Each instrument, at minimum, has a "type" field which describes what type of ins
 | device   | Name of the peary software device, typically "SpacelyCaribouBasic" (Spacely-Caribou). | 
 
 An example instrument dictionary for an NI-PXI Test Setup:
-```
+
+```python
 INSTR = {"SMU_A" : {"type" : "NIDCPower", 
                     "slot" : "PXI1Slot2"},
          "SMU_B" : {"type" : "NIDCPower",
@@ -59,7 +60,8 @@ INSTR = {"SMU_A" : {"type" : "NIDCPower",
 ```
 
 An example instrument dictionary for a Spacely-Caribou Test Setup:
-```
+
+```python
 INSTR = {"car" : {"type": "Caribou",
                   "host":"192.168.1.24",
                   "port":12345,

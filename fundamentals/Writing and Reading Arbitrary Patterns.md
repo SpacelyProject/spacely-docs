@@ -14,7 +14,8 @@
 </p>
  
 # Example Code
- ```
+
+ ```python
  # Create an empty dictionary
  waves = {}
         

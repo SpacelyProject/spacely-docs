@@ -16,11 +16,9 @@ Welcome to the Spacely Project! This directory serves as a reference for the mos
 2. [ASIC Test Routines and Subroutines](</fundamentals/ASIC Test Routines and Subroutines.md>)
 3. [Writing and Reading Arbitrary Patterns](</fundamentals/Writing and Reading Arbitrary Patterns.md>) (with IOSPEC)
 
-## Other Resources
+As you read, you can refer to the files in *spacely-docs/ExampleASIC/* as an example.
 
-**If you are using Spacely-Caribou hardware,** [learn how to get started.](</spacely-caribou/basic-setup/ZCU102 Setup for Spacely-Caribou.md>)
+**Step Three:** Learn more, and start to develop software for Spacely.
 
-Go deeper and learn about some of the design philosophy and major software components of Spacely:
-- [Appropriate Use of Abstraction](</philosophy/Appropriate Use of Abstraction.md>)
-- [The Glue Converter](</special-topics/The Glue Converter.md>)
-- [Spacely Experiments and DataFiles](</special-topics/Spacely Experiments and DataFiles.md>)
+1. **If you are using Spacely-Caribou hardware,** make sure to review [Spacely-Caribou Fundamentals](</spacely-caribou/README.md>)
+2. Go deeper and learn about some of the design philosophy and major software components of Spacely in [Special Topics](</special-topics/README.md>)

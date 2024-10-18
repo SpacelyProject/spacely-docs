@@ -22,7 +22,7 @@ If you see this message, Spacely is installed correctly and you may proceed. If 
 
 With Spacely installed, you are now ready to start writing the code that will control your ASIC! the first step is to create your **project-specific configuration files.** These files will contain all of the configuration information, test routines, and helper functions that are necessary for Spacely to interact with your particular ASIC. 
 
-The format and contents of these files are described in later sections. You can write these files from scratch, or copy the equivalent files from the folder spacely-docs/ExampleASIC as a template. 
+The format and contents of these files are described in later sections. You can write these files from scratch, or copy the equivalent files from the folder *spacely-docs/ExampleASIC* as a template. 
 
 Spacely requires a special naming convention in order to locate and load your files. If the name of your project is "MyASIC", then you must create the subfolder /spacely-asic-config/MyASIC. Inside that folder you will create the following files:
 
