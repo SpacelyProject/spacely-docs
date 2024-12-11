@@ -7,10 +7,7 @@ This guide will instruct you on how to boot the ZCU102 for Spacely-Caribou. Unle
 
 ## Flash the Operating System 
 
-**Skip this step if:** You already have an SD card with an operating system image in your ZCU102. 
-
-**Prerequisites:** You must have a Petalinux Operating System image. If you do not have this, contact Spacely Developers. 
-
+If you do not already have an SD card with an operating system image in your ZCU102, follow steps here: [Operating System Image for Spacely-Caribou](</spacely-caribou/basic-setup/Operating System Image for Spacely-Caribou.md>)
 
 ## Hardware Connections
 
