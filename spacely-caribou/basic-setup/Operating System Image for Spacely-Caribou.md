@@ -18,21 +18,23 @@ Your SD card should now have two partitions, a boot partition which has a “FAT
 
 ## Copy Files to the SD Card
 
-First, mount your SD card as a media device with the following commands:
+First, mount both partitions of your SD card under /media/ with the following commands:
 ```
 sudo mkdir /media/usb1
 sudo mount /dev/sdb1 /media/usb1
+sudo mkdir /media/usb2
+sudo mount /dev/sdb2 /media/usb2
 ```
 
-Then, copy boot files to the FAT32 partition. 
+Then, copy boot files to **the FAT32 partition (/media/usb1)**. 
 
 *Boot files:*  BOOT.BIN, image.ub, and boot.scr
 
 Note: the kernel and devicetree blob are included as part of these files. 
 
-Next, Extract the rootfs into the second partition:
+Next, Extract the rootfs into **the second partition (/media/usb2)**:
 
-1. cd to mounted directory, then tar –xzvf /PATH/TO/rootfs.tar.gz
+1. cd to mounted directory, then ```tar –xzvf /PATH/TO/rootfs.tar.gz -C /media/usb2/```
 2. Optional: Add peary and cmake files to the rootfs to save time later.
 Process for Mounting/unmounting an SD Card on Linux:
 
