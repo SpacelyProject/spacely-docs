@@ -33,7 +33,7 @@ Often the simplest way to create a GlueWave is to programmatically create a Pyth
 - gc.dict2Glue()
 
 **Code Example:**
-```
+```python
 # Create an empty dictionary
  waves = {}
         

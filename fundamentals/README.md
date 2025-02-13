@@ -21,4 +21,5 @@ As you read, you can refer to the files in *spacely-docs/ExampleASIC/* as an exa
 **Step Three:** Learn more, and start to develop software for Spacely.
 
 1. **If you are using Spacely-Caribou hardware,** make sure to review [Spacely-Caribou Fundamentals](</spacely-caribou/README.md>)
-2. Go deeper and learn about some of the design philosophy and major software components of Spacely in [Special Topics](</special-topics/README.md>)
+2. Learn the correct way to handle [Global Variables and Configuration in Spacely](</fundamentals/Global Variables and Configuration in Spacely.md>)
+3. Go deeper and learn about some of the design philosophy and major software components of Spacely in [Special Topics](</special-topics/README.md>)

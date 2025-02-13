@@ -11,7 +11,8 @@ As a fully open-source system, Spacely-Caribou allows great flexibility across t
 
 ## Firmware 
 
-1. [Autogeneration Tools for Spacely-Caribou Firmware](</spacely-caribou/Autogeneration Tools for Spacely-Caribou Firmware.md>)
+1. [Creating Firmware Designs for Spacely-Caribou](</spacely-caribou/Creating Firmware Designs for Spacely-Caribou.md>)
+2. [Autogeneration Tools for Spacely-Caribou Firmware](</spacely-caribou/Autogeneration Tools for Spacely-Caribou Firmware.md>)
 
 ## Software 
 

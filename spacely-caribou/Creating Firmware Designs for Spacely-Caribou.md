@@ -72,8 +72,13 @@ Each AXI-enabled block that you add will receive an address in the AXI address s
 
 
 ## Assign Pins 
-TBA
+In order to connect your firmware design to your ASIC, you need to assign external pins. CMOS_IN and CMOS_OUT signals on the CaR board are driven from the ZCU102 via a differential (LVDS) channel, so you should first use the Xilinx Utility Buffer IP to convert any single-ended signal in your firmware design which is intended to connect to a CMOS_IN/CMOS_OUT channel into a differential signal. You can connect this signal to an pin simply by right-clicking the differential port on the utility buffer and selected "Make External":
 
+<p align="center">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/spacely-caribou/CreatingFirmware_Fig5.PNG" width="700">
+</p>
+
+After creating these ports, you will need to write a constraint file which assigns them to the correct FPGA pins to be connected to CMOS_IN/CMOS_OUT channels on the CaR board. (TBA)
 
 ## Synthesize, Implement, and Close Timing
 TBA
