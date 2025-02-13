@@ -14,28 +14,28 @@ Using a digital twin is a type of simulation. However, it is distinct from typic
 
 To run a digital twin variation, you first need to set some important variables in your *MyASIC_Config.py* file. 
 
-```
-USE_COCOTB = True
+```python
+sg.USE_COCOTB = True
 ```
 This switch must be "True" to do any RTL simulation with Spacely (including digital twin).
 If you are using a Caribou system, setting this switch will route all Caribou methods to the digital twin instead of the actual hardware.
-```
-SIMULATOR  = "xcelium" 
+```python
+sg.SIMULATOR  = "xcelium" 
 ```
 Xcelium is the recommended and supported simulator, but you can try using others. See "External Environment Variables" below.
 
-```
-COCOTB_BUILD_ARGS = []
+```python
+sg.COCOTB_BUILD_ARGS = []
 ```
 Pass any needed additional build arguments as a list to Cocotb. 
 
-```
-HDL_TOP_MODULE = "myModule"
+```python
+sg.HDL_TOP_MODULE = "myModule"
 ```
 This is the name of your HDL top module, which includes everything you want to simulate (potentially including both an ASIC and your test firmware). 
 Later, we will create a file called */spacely-asic-config/MyASIC/hdl/myModule.sv*
-```
-TWIN_MODE = (0 or 1 or 2)
+```python
+sg.TWIN_MODE = (0 or 1 or 2)
 ```
 This variable allows you to select from three possible HDL simulation flows. See below for details...
 
@@ -51,8 +51,8 @@ allow your testbench to talk to these blocks.
 ## TWIN_MODE = 2
 Setting TWIN_MODE to 2 will instruct Spacely to take your firmware design directly from a netlist written by Vivado, and pre-process it to automatically create a digital twin. 
 When you use this mode, you should also set:
-```
-FW_TOP_MODULE = "myFwModule"
+```python
+sg.FW_TOP_MODULE = "myFwModule"
 ```
 Where "myFwModule" is the name of your top-level firmware netlist exported from Vivado. This netlist should be saved as: */spacely-asic-config/MyASIC/hdl/myFwModule.v*
 
@@ -82,7 +82,7 @@ If any of your blocks take the global AXI clock or reset as an input, they can b
 **Example:**
 Suppose we want to create a digital twin of a firmware image which contains only a *test_data_source* block from **spacely-caribou-common-blocks**. (In this case there is no ASIC, we are just testing the firmware by itself.) Let's assume that in **mem_map.txt**, the base address for test_data_source is 0x400005000. Then our top level file would look like this:
 
-```
+```systemverilog
 `timescale 1ns/1ps
 module CaribouDigitalTwinTop();
 
@@ -105,7 +105,7 @@ Copy this file into your /hdl/ directory, and instantiate it as normal, connecti
 
 **Example:**
 Suppose that our firmware top level is called "SP3_Firmware_bd". (The "_bd" stands for "Block Design", from Vivado). Suppose also that we have a total of seven AXI-addressable firmware blocks in this image. Then the instantiation inside the top level HDL file may look like this: 
-```
+```systemverilog
 SP3_Firmware_bd uFW (/*AXI_PASSTHROUGH(7)*/
 			.DTP0(DTP0),
 			.DTP1(DTP1),

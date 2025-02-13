@@ -1,4 +1,4 @@
-#Spacely-Cocotb Example Design
+# Spacely-Cocotb Example Design
 
 The Spacely pytest suite includes a demo project for Spacely-Cocotb simulation, which is used as a test of the correctness Spacely-Cocotb framework, but is also useful as a demo project to understand the various ways in which RTL can be co-simulated with Spacely. 
 
@@ -324,7 +324,7 @@ sg.TWIN_MODE=2
 In Vivado, our firmware design looks like this: 
 
 <p align="center">
-<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/digital-twin/pytest-golden-firmware.PNG" width="700">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/digital-twin/pytest-golden-firmware.PNG" width="900">
 </p>
 
 Let's break down the blocks that we see here:
