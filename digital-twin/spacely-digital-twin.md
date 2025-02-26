@@ -8,7 +8,9 @@ A "digital twin" is a virtual copy of a physical system inside of a simulator. T
 
 Using a digital twin is a type of simulation. However, it is distinct from typical RTL simulation, which aims to verify the internal functionality of a block in the most efficient way possible. Instead, the digital twin's goal is to mimic precisely the interface to the device under test (in this case, via Spacely-Caribou), even if this introduces inefficiencies. In this way, it comes much closer to replicating the results obtained in the lab, and can help prepare to obtain those results efficiently and accurately. 
 
-
+<p align="center">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/digital-twin/digital-twin-flow-diagram.PNG" width="900">
+</p>
 
 # Config Options for Spacely Digital Twin Simulation 
 
