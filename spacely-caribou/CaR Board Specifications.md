@@ -8,6 +8,8 @@
 | **# of Channels** |  8 |
 | **Voltage Range [V]**| 0.8 - 3.6 |
 
+**Note:** The power supplies measure current with a 0.01 ohm feedback resistor, and the monitoring component has an input offset of up to 10 uV, which may cause significant issues when measuring currents of ~ a few mA or smaller. See https://www.ti.com/product/INA226. One solution is to swap the feedback resistor for a higher value. 
+
 
 ## Voltage References (BIAS)
 
