@@ -25,7 +25,7 @@
 | **Voltage Range [V]**| 0 - 4 |
 | **Voltage Resolution [mV]**| ~1 (12 bit resolution from 4.0V reference) |
 | **Output Noise**| <150 nV/sqrt(Hz) above 40 Hz (see datasheet Fig 48) |
-| **Short Circuit Output Current [mA]**| 25 |
+| **Max Output Current [mA]**| Up to ~20 mA, depending on voltage (see datasheet) |
 
 **Notes:**
 1. **Load Stability:** The voltage references can only drive a small load capacitance (< 1nF). Attaching a larger capacitance may result in instability and oscillation -- see DAC7678 datasheet for details.
@@ -104,3 +104,26 @@ Inputs from the ASIC to Caribou
 Si5345, programmable using ClockBuilder Pro + Peary.
 
 Output Clocks 2 and 4 are routed to the SEARAY connector.
+
+
+## Controlling CaR Board Current and Voltage Supplies with Spacely
+
+CaR board power supplies (PWR_OUT), biases (BIAS), and current source/sinks (CUR) can be controlled with Spacely.
+
+*Power Supplies (PWR_OUT)*
+1. To set voltage: V_PORT["VDD"].set_voltage(<voltage in volts>)
+2. To monitor voltage: V_PORT["VDD"].get_voltage()
+3. To monitor output current: V_PORT["VDD"].get_current()
+4. Current limits are not available in hardware. Setting a current limit that is not 'None' in MyASIC_Config.py will result in a warning.
+
+*Biases (BIAS)*
+1. To set voltage: V_PORT["VDD"].set_voltage(<voltage in volts>)
+2. To monitor voltage: V_PORT["VDD"].get_voltage()
+3. Current monitoring is not possible in hardware. V_PORT["Vref"].get_current() will return 'None' and print a warning.
+4. Current limits are not available in hardware. Setting a current limit that is not 'None' in MyASIC_Config.py will result in a warning.
+
+V_WARN_LIMIT can be used to set high/low limits for voltage sources, which will be monitored by the Spacely terminal. V_PORT["VDD"].set_voltage() will refuse to set voltages outside these limits unless the optional "force=True" argument is given.
+
+*Current Sources/Sinks (CUR)*
+1. Set desired current with I_PORT["Ibias"].set_current(<current in amps>). A positive value will push/source current; a negative value will pull/sink current.
+2. Voltage monitoring is not available in hardware. I_PORT["Ibias"].get_voltage() will return 'None', and the auto voltage monitor will print a warning if voltage limits are supplied for a current source in the config file. 
