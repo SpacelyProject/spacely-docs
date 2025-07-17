@@ -12,7 +12,7 @@ Spacely is a framework for testing Application-Specific Integrated Circuits. Thi
 6. Writing Spacely Test Code for your ASIC
 
 
-##1. Defining Your Design
+## 1. Defining Your Design
 
 In order for you to test your design, you need to determine some information about your design and its interfaces. 
 
@@ -33,7 +33,7 @@ You are also encouraged to have:
 - Detailed documentation of the functional behavior of the ASIC.
 
 
-##2. Defining Your Test Objectives
+## 2. Defining Your Test Objectives
 
 A test objective is a specific measurement you want to make which will typically either confirm the ASIC's functionality, or give a result for the ASIC's figure of merit. 
 
@@ -53,7 +53,7 @@ Before writing your Spacely test, you must define test objectives, and each obje
 - If this output signal is captured, what procedure will you use to generate a useful figure of merit from the raw data?
 - What is the significance of the calculated result?
 
-##3. Defining Your Test Setup
+## 3. Defining Your Test Setup
 
 With your design and objectives in place, you can now specify your test setup, which is a complete description of all instruments you will use and how they connect to the device under test. The recommended format for the Test Interface is an enumerated block diagram, in which your ASIC and all instruments are blocks, and every unique connection between two blocks is given a reference number, and described. 
 
@@ -77,7 +77,7 @@ Another key consideration at this point is **what instruments are supported by S
 
 Limited test resources have a habit of killing designers' dreams, so it is very normal to iterate between steps 1 through 3, refining your objectives to fit what can be practically tested with available hardware. :)
 
-##4. Running Spacely for the First Time
+## 4. Running Spacely for the First Time
 
 It is now time to try [Installing Spacely](</fundamentals/Installing Spacely.md>) on your machine. 
 
@@ -116,7 +116,7 @@ ExampleASIC has the following modules:
 
 If you see this message, Spacely is installed correctly and you may proceed. If not, return to [Installing Spacely](</fundamentals/Installing Spacely.md>) to correct any errors. 
 
-##5. Writing Spacely Test Code for your ASIC
+## 5. Writing Spacely Test Code for your ASIC
 
 With Spacely installed, you are now ready to start writing the code that will control your ASIC! the first step is to create your **project-specific configuration files.** These files will contain all of the configuration information, test routines, and helper functions that are necessary for Spacely to interact with your particular ASIC. 
 
