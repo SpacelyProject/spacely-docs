@@ -78,7 +78,8 @@ In order to connect your firmware design to your ASIC, you need to assign extern
 <img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/spacely-caribou/CreatingFirmware_Fig5.PNG" width="700">
 </p>
 
-After creating these ports, you will need to write a constraint file which assigns them to the correct FPGA pins to be connected to CMOS_IN/CMOS_OUT channels on the CaR board. (TBA)
+After creating these ports, you will need to write a constraint file which assigns them to the correct FPGA pins which are physically connected to CMOS_IN/CMOS_OUT channels on the CaR board.
+You can use the file [generic_CaR_board_constraints.xdc](</spacely-caribou/helpful-files/generic_CaR_board_constraints.xdc>) as a starting point. (If you use the default Caribou names for your pins, i.e. "CMOS_OUT_1", you won't have to modify this file at all.)
 
 ## Synthesize, Implement, and Close Timing
 TBA

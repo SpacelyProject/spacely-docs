@@ -12,7 +12,7 @@ Spacely is a framework for testing Application-Specific Integrated Circuits. Thi
 6. Writing Spacely Test Code for your ASIC
 
 
-## 1. Defining Your Design
+## 1. Gathering Information about Your Design
 
 In order for you to test your design, you need to determine some information about your design and its interfaces. 
 
@@ -77,7 +77,11 @@ Another key consideration at this point is **what instruments are supported by S
 
 Limited test resources have a habit of killing designers' dreams, so it is very normal to iterate between steps 1 through 3, refining your objectives to fit what can be practically tested with available hardware. :)
 
-## 4. Running Spacely for the First Time
+## 4. Creating Test Hardware
+
+PCBs, etc. --> Section TBA
+
+## 5. Running Spacely for the First Time
 
 It is now time to try [Installing Spacely](</fundamentals/Installing Spacely.md>) on your machine. 
 
@@ -116,7 +120,7 @@ ExampleASIC has the following modules:
 
 If you see this message, Spacely is installed correctly and you may proceed. If not, return to [Installing Spacely](</fundamentals/Installing Spacely.md>) to correct any errors. 
 
-## 5. Writing Spacely Test Code for your ASIC
+## 6. Writing Spacely Test Code for your ASIC
 
 With Spacely installed, you are now ready to start writing the code that will control your ASIC! the first step is to create your **project-specific configuration files.** These files will contain all of the configuration information, test routines, and helper functions that are necessary for Spacely to interact with your particular ASIC. 
 
@@ -132,6 +136,8 @@ Spacely requires a special naming convention in order to locate and load your fi
 Detailed descriptions on how to write the contents of these files are available in [Spacely Fundamentals](</fundamentals/README.md>).
 
 Additionally, for Fermilab users, many more examples are available at: https://github.com/Fermilab-Microelectronics/spacely-asic-config
+
+If you are using the Caribou system for your design, you will also need Caribou firmware. You can find a tutorial on generating Caribou firmware [here](</spacely-caribou/Creating Firmware Designs for Spacely-Caribou.md>)
 
 **Note:** Once you've created these files, be sure to go back to *Master_Config.txt* and change the TARGET from "ExampleASIC" to "MyASIC". 
 
