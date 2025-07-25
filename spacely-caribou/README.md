@@ -6,7 +6,7 @@ As a fully open-source system, Spacely-Caribou allows great flexibility across t
 To use Spacely-Caribou to test your ASIC, you generally need to ensure that the hardware, firmware, and software are set up correctly. The flowchart below breaks this down into four "flows":
 
 <p align="center">
-<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/spacely-caribou/Spacely_Caribou_Flow.PNG" width="700">
+<img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/spacely-caribou/Spacely_Caribou_Flow.png" width="700">
 </p>
 
 Keep in mind that there are some dependencies between the flows. The arrows in the flowchart above give a suggestion for the order in which to work.
