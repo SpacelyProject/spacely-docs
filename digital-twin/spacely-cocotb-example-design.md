@@ -196,7 +196,7 @@ param_NUM_SIG,0x38,0xffffffff,True,False
 param_NUM_SAMP,0x3c,0xffffffff,True,False
 ```
 
-This **mem_map.txt** file is exactly identical to the memory map file that must be created in order to build the actual test firmware, so creating it for Digital Twin test is no additional burden. The format of this file is explained in [Autogeneration Tools for Spacely-Caribou Firmware](</spacely-caribou/Autogeneration Tools for Spacely-Caribou Firmware.md>).
+This **mem_map.txt** file is exactly identical to the memory map file that must be created in order to build the actual test firmware, so creating it for Digital Twin test is no additional burden. The format of this file is explained in [Creating a Memory Map](</spacely-caribou/test-firmware-design/Creating a Memory Map.md>).
 
 To interact with our design via the test firmware, we will write a new routine called **ROUTINE_test_cadder_mode1_2**. *This exact same Spacely routine will work for Twin Mode 1, Twin Mode 2, and even testing the actual hardware!*
 
@@ -329,7 +329,7 @@ In Vivado, our firmware design looks like this:
 
 Let's break down the blocks that we see here:
 - The **logic_clk_div** and **Arbitrary_Pattern_Generator** blocks play the same role as in the previous test. 
-- The **Zynq UltraScale+ MPSoC** represents the ZCU102 SoC; this block gets placed at the beginning of [any Spacely-Caribou firmware design.](</spacely-caribou/Creating Firmware Designs for Spacely-Caribou.md>)
+- The **Zynq UltraScale+ MPSoC** represents the ZCU102 SoC; this block gets placed at the beginning of [any Spacely-Caribou firmware design.](</spacely-caribou/test-firmware-design/Creating Firmware Designs for Spacely-Caribou.md>)
 - The **AXI Interconnect** and **Processor System Reset** blocks are automatically created and routed by Vivado when you choose "Connection Assistance". 
 - The **Slice** and **Concat** blocks perform basic vector operations, extracting or combining individual bits of a vector. The **Constant** block assigns the two unused bits of the APG input to zero. 
 - The **Utility Buffer** blocks convert differential I/O to single-ended signals. This is needed for a real Caribou firmware design because all of the CMOS_IN/CMOS_OUT channels of the CaR board are controlled by LVDS signals from the FPGA. 

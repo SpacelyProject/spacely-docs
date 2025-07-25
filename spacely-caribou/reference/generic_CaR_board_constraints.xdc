@@ -92,3 +92,9 @@ set_property IOSTANDARD LVDS [get_ports INJ_CTRL_3_*]
 set_property PACKAGE_PIN Y8 [get_ports {INJ_CTRL_4_clk_p[0]}]
 set_property PACKAGE_PIN Y7 [get_ports {INJ_CTRL_4_clk_n[0]}]
 set_property IOSTANDARD LVDS [get_ports INJ_CTRL_4_*]
+
+
+#LVDS
+set_property PACKAGE_PIN P11 [get_ports {LVDS17_clk_p[0]}]
+set_property PACKAGE_PIN N11 [get_ports {LVDS17_clk_n[0]}]
+set_property IOSTANDARD LVDS [get_ports LVDS17_*]

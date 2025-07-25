@@ -15,7 +15,7 @@ Spacely includes software, firmware, and hardware components distributed across 
 
 ## Use Spacely
 
-Ready to get started? Check out [Spacely Fundamentals](</fundamentals/README.md>) to learn how to install Spacely and starting writing code for your ASIC. 
+Ready to get started? Check out [Getting Started with Spacely](</fundamentals/Getting Started.md>) to learn how to install Spacely and starting writing code for your ASIC. 
 
 ## Contribute to the Spacely Project
 

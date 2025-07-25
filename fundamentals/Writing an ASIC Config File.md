@@ -108,6 +108,8 @@ Current Biases:
 DEFAULT_IOSPEC = ".\\spacely-asic-config\\SPROCKET2\\sprocket2_iospec.txt"
 ```
 
+**Caution:** If you do not include a DEFAULT_IOSPEC, Spacely will not initialize a global GlueConverter instance for you, so sg.gc commands will fail. 
+
 **DEFAULT_FPGA_BITFILE_MAP** -- For NI-PXI, this variable specifies the bitfile to load onto each FPGA slot that you are using. For example:  
 ```
 DEFAULT_FPGA_BITFILE_MAP = {"PXI1Slot4":"NI7972_NI6583_40MHz"}

@@ -45,4 +45,4 @@ umount
 
 ## Next Steps
 
-Return your SD card to your ZCU102, and proceed to [ZCU102 Setup for Spacely-Caribou](</spacely-caribou/basic-setup/ZCU102 Setup for Spacely-Caribou.md>)
+Return your SD card to your ZCU102, and proceed to [ZCU102 Setup](</spacely-caribou/hardware-setup/ZCU102 Setup.md>)

@@ -2,7 +2,7 @@
 
 **Xilinx Vivado** is used to generate new firmware designs for Spacely-Caribou. Firmware designs are created by connecting together various **firmware blocks,** which may be either custom-designed blocks or reusable blocks from the **spacely-caribou-common-blocks** repo. 
 
-If you are designing your own custom firmware blocks, refer to [Autogeneration Tools for Spacely-Caribou Firmware](</spacely-caribou/Autogeneration Tools for Spacely-Caribou Firmware.md>) for some tools to make your life easier. 
+If you are designing your own custom firmware blocks, refer to [Firmware Wrapper Autogeneration](</spacely-caribou/test-firmware-design/Firmware Wrapper Autogeneration.md>) for a tool that will make your life easier. 
 
 If you have your firmware blocks ready, this page will guide you through the process of creating a firmware design. 
 
@@ -70,6 +70,7 @@ Each AXI-enabled block that you add will receive an address in the AXI address s
 <img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/spacely-caribou/CreatingFirmware_Fig4.PNG" width="700">
 </p>
 
+Once you have assigned each block a memory address, you can use the information in this window to [Create a Memory Map](</spacely-caribou/test-firmware-design/Creating a Memory Map.md>).
 
 ## Assign Pins 
 In order to connect your firmware design to your ASIC, you need to assign external pins. CMOS_IN and CMOS_OUT signals on the CaR board are driven from the ZCU102 via a differential (LVDS) channel, so you should first use the Xilinx Utility Buffer IP to convert any single-ended signal in your firmware design which is intended to connect to a CMOS_IN/CMOS_OUT channel into a differential signal. You can connect this signal to an pin simply by right-clicking the differential port on the utility buffer and selected "Make External":
@@ -79,7 +80,7 @@ In order to connect your firmware design to your ASIC, you need to assign extern
 </p>
 
 After creating these ports, you will need to write a constraint file which assigns them to the correct FPGA pins which are physically connected to CMOS_IN/CMOS_OUT channels on the CaR board.
-You can use the file [generic_CaR_board_constraints.xdc](</spacely-caribou/helpful-files/generic_CaR_board_constraints.xdc>) as a starting point. (If you use the default Caribou names for your pins, i.e. "CMOS_OUT_1", you won't have to modify this file at all.)
+You can use the file [generic_CaR_board_constraints.xdc](</spacely-caribou/reference/generic_CaR_board_constraints.xdc>) as a starting point. (If you use the default Caribou names for your pins, i.e. "CMOS_OUT_1", you won't have to modify this file at all.)
 
 ## Synthesize, Implement, and Close Timing
 TBA

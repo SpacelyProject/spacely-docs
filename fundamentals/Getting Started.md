@@ -71,7 +71,7 @@ All instruments needed to support the operation of your ASIC should be considere
 - Input sources / Output acquisition hardware based on specs from the previous section.
 
 Another key consideration at this point is **what instruments are supported by Spacely.** These fall into three categories:
-1. **The Caribou system** is an inexpensive, all-in-one test system that include an FPGA, biases, and analog resources. To see what resources are available from Caribou, see [Caribou Specifications](</spacely-caribou/CaR Board Specifications.md>)
+1. **The Caribou system** is an inexpensive, all-in-one test system that include an FPGA, biases, and analog resources. To see what resources are available from Caribou, see [Caribou Specifications](</spacely-caribou/reference/CaR Board Specifications.md>)
 2. **The NI-PXI system** is a modular test card system. Spacely can support NI SMUs and PSUs, as well as certain FPGA I/O cards (see [this page](</special-topics/NI-PXI Glue Firmware.md>)
 3. Certain **general testbench instruments** such as power supplies, oscilloscopes, and AWGs are supported for control via GPIB or IP interfaces. There is not currently an exhaustive list of what instruments are supported -- see the **py-libs-common** repo. Almost all modern instruments come with a simple remote control interface, so if you cannot control your instrument with the existing py-libs-common code, you are encouraged to extend it.
 
@@ -137,7 +137,7 @@ Detailed descriptions on how to write the contents of these files are available 
 
 Additionally, for Fermilab users, many more examples are available at: https://github.com/Fermilab-Microelectronics/spacely-asic-config
 
-If you are using the Caribou system for your design, you will also need Caribou firmware. You can find a tutorial on generating Caribou firmware [here](</spacely-caribou/Creating Firmware Designs for Spacely-Caribou.md>)
+If you are using the Caribou system for your design, you will also need Caribou firmware. You can find a tutorial on getting started with Caribou [here](</spacely-caribou/README.md>)
 
 **Note:** Once you've created these files, be sure to go back to *Master_Config.txt* and change the TARGET from "ExampleASIC" to "MyASIC". 
 
