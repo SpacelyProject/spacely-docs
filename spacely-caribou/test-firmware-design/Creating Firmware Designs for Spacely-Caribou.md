@@ -22,12 +22,12 @@ If you have your firmware blocks ready, this page will guide you through the pro
 5. On the left sidebar, select "Create Block Design". Give the block design a name ending with "_bd". 
 6. In the new block diagram, click the "+" button and search for "zynq" to add the Zynq UltraScale+ MPSoC.
 7. Accept the prompt to run Block Automation for the Zynq IP.
-8. Double-click on the Zynq IP to recustomize it:
-	a. In the PS-PL Configuration tab, disable AXI HPM1 FPD, and set the bit width of AXI HPM0 FPD to 32 bits. This will be the main AXI interface used for your Spacely-Caribou design. 
+8. Double-click on the Zynq IP to recustomize it. In the PS-PL Configuration tab, ensure that AXI HPM0 FPD is enabled and that AXI HPM1 FPD is disabled. Leave the data width of AXI HPM0 FPD at its default of 128 bits (see Note 1 below).
 9. Connect the maxihpm0_fpd_aclk pin to pl_clk0 to supply the AXI clock from pl_clk0. 
 10. In the sources tab, right-click your new block diagram and choose "Create HDL Wrapper...". Let Vivado manage the wrapper and auto-update.
 11. Right-click the new HDL wrapper and select "Set as Top"
 
+**Note 1:** By convention, Spacely-Caribou firmware blocks use a 32 bit wide AXI bus. However, we leave the AXI HPM0 FPD data width setting at 128 bits. When we run AXI auto-routing below, that 128 bit width will automatically be converted to 32 within the PL to connect to our 32 bit blocks. Within the PS, the AXI bus is *always* 128 bits wide. If we were to set AXI HPM0 FPD to a width of 32 bits, this would only truncate the data bus to its lower 32 bits -- but it would still be aligned to 128 bits. This means that only 32-bit registers which are aligned to 128bit addresses can be accessed. (For example, 0x00 and 0x10 could be accessed, but not 0x04, 0x08, or 0x0c.) This is obviously not what we want, so we leave that setting at 128 bits and let the PL convert the bus width for us. 
 
 ## Add and Connect Your Blocks 
 
