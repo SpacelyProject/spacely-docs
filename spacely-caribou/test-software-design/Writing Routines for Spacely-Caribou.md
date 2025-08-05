@@ -14,6 +14,11 @@ INSTR = {"car" : {"type": "Caribou",
                   "device":"SpacelyCaribouBasic"}}
 ```
 
+When using the CaR board for the first time, you should call the **init_car()** function in your routines. This function sends I2C commands that enable software control of the CaR board power supplies, preparing them for use:
+```python
+sg.INSTR["car"].init_car()
+```
+
 **Notes:**
 1. For debug purposes, it is possible to emulate the Caribou system in software. To do this, replace the host field with the string "EMULATE". 
 2. On Linux systems, connecting to a Caribou device will cause Spacely to acquire a global lock on that device. This is to prevent confusion from multiple remote users simultaneously accessing a Caribou device. (This protection is not yet implemented on Windows.)

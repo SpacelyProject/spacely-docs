@@ -73,7 +73,7 @@ Each AXI-enabled block that you add will receive an address in the AXI address s
 Once you have assigned each block a memory address, you can use the information in this window to [Create a Memory Map](</spacely-caribou/test-firmware-design/Creating a Memory Map.md>).
 
 ## Assign Pins 
-In order to connect your firmware design to your ASIC, you need to assign external pins. CMOS_IN and CMOS_OUT signals on the CaR board are driven from the ZCU102 via a differential (LVDS) channel, so you should first use the Xilinx Utility Buffer IP to convert any single-ended signal in your firmware design which is intended to connect to a CMOS_IN/CMOS_OUT channel into a differential signal. You can connect this signal to an pin simply by right-clicking the differential port on the utility buffer and selected "Make External":
+In order to connect your firmware design to your ASIC, you need to assign external pins. CMOS_IN and CMOS_OUT signals on the CaR board are driven from the ZCU102 via a differential (LVDS) channel, so you need to first convert each signal intended to drive a CMOS_IN/CMOS_OUT channel into a differential signal. You can do this using a Xilinx Utility Buffer IP (which can be added via right-click > "Add IP..."). After connecting the input of the buffer to your signal, you can set the output of the buffer to connect to a pin by simply right-clicking the differential port on the utility buffer and selecting "Make External" as shown below.
 
 <p align="center">
 <img src="https://github.com/SpacelyProject/spacely-docs/blob/main/figures/spacely-caribou/CreatingFirmware_Fig5.PNG" width="700">
