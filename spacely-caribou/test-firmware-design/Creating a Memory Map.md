@@ -53,8 +53,7 @@ param_DATA_WIDTH,0x8,0xffffffff,True,False
 ```
 This is a memory map for a firmware design which contains a single block 
 instantiated at the base address of ```0x400000000```. (If you don't know what 
-address your block is instantiated at, check [the Vivado Address Editor]
-(</figures/spacely-caribou/CreatingFirmware_Fig4.PNG>).) This block has three 
+address your block is instantiated at, check [the Vivado Address Editor](</figures/spacely-caribou/CreatingFirmware_Fig4.PNG>).) This block has three 
 registers named *control*, *data*, and *param_DATA_WIDTH* that are all 32 bits wide, at address offsets of *0x0*, *0x4*, and *0x8* respectively. The first register is read/write, while the latter two are read-only.
 
 ## Auto-generating a Peary Memory Map

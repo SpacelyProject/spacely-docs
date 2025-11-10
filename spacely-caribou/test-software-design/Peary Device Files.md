@@ -2,7 +2,7 @@
 
 The "Peary Device Files" are a collection of C++ files that tell Peary how to communicate with your chip. 
 
-*In the original Caribou system,* test engineers needed to create a new set of Peary Device Files for every new chip they wanted to test. These files would reside in the folder **peary/devices/<DeviceName>**, where **<DeviceName>** is the name of the chip. 
+*In the original Caribou system,* test engineers needed to create a new set of Peary Device Files for every new chip they wanted to test. These files would reside in the folder **peary/devices/\<DeviceName\>**, where **\<DeviceName\>** is the name of the chip. 
 
 *However, in Spacely-Caribou systems,* we use one common set of Device Files for all chips, with only one small part (the memory map) which needs to be customized. Custom code that is specific to one ASIC [should, as always, be written in Python](</special-topics/philosophy/Appropriate Use of Abstraction.md>). The common Device Files for Spacely-Caribou are found in the folder **peary/devices/SpacelyCaribouBasic**. They are [included automatically when you download the latest version of Peary.](<https://gitlab.cern.ch/adquinn/peary/-/tree/aq_dev/devices/SpacelyCaribouBasic?ref_type=heads>)
 
