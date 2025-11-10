@@ -10,7 +10,7 @@ Each firmware block in your design that has AXI-controllable registers will have
 
 If you are using blocks from the Spacely Caribou Common Blocks repo, just go to the README file for that block and scroll to the bottom. There you will find the mem_map.txt entry for that block, which you can directly copy into your mem_map.txt. All you have to do is change the (IP Base Address) to the address found in the Vivado Address Editor.
 
-If you are using a custom firmware block, you will have to write its mem_map.txt entry yourself. The format is described in the following section.
+If you are using a custom firmware block, you will have to write its mem_map.txt entry yourself using the format is described in the following section. (If you are using the Spacely tool for [Firmware Wrapper Autogeneration](</spacely-caribou/test-firmware-design/Firmware Wrapper Autogeneration.md>) then this will automatically generate a memory map in *README.md*.)
 
 ## mem_map.txt Format
 
@@ -43,6 +43,19 @@ Where:
 - readable? = True if readable, else False
 - writeable? = True if writeable, else False
 
+**Example Memory Map**
+
+```
+*BASE 0x400000000
+control,0x0,0xffffffff,True,True
+data,0x4,0xffffffff,True,False
+param_DATA_WIDTH,0x8,0xffffffff,True,False
+```
+This is a memory map for a firmware design which contains a single block 
+instantiated at the base address of ```0x400000000```. (If you don't know what 
+address your block is instantiated at, check [the Vivado Address Editor]
+(</figures/spacely-caribou/CreatingFirmware_Fig4.PNG>).) This block has three 
+registers named *control*, *data*, and *param_DATA_WIDTH* that are all 32 bits wide, at address offsets of *0x0*, *0x4*, and *0x8* respectively. The first register is read/write, while the latter two are read-only.
 
 ## Auto-generating a Peary Memory Map
 

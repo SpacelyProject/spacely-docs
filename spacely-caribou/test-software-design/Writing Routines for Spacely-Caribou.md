@@ -5,7 +5,7 @@ When running a Spacely-Caribou test stand, Spacely interfaces with the Caribou h
 
 ## Initializing Caribou
 
-Caribou is considered to be an instrument, which must be initialized in the INSTR dictionary of the [Config file](/fundamentals/Writing an ASIC Config File.md) like any other. Its required metadata fields are type, host, port, and device. Each of these fields has a "conventional" value which is given in the code snippet below. If you are using a standard Spacely-Caribou setup with only one Caribou system, you should stick exactly to this initialization:
+Caribou is considered to be an instrument, which must be initialized in the INSTR dictionary of the [Config file](</fundamentals/Writing an ASIC Config File.md>) like any other. Its required metadata fields are type, host, port, and device. Each of these fields has a "conventional" value which is given in the code snippet below. If you are using a standard Spacely-Caribou setup with only one Caribou system, you should stick exactly to this initialization:
 
 ```python
 INSTR = {"car" : {"type": "Caribou",
@@ -55,7 +55,7 @@ sg.INSTR["car"].axi_shell()
 
 ## Controlling Voltage and Current Supplies
 
-Caribou voltage and current supplies should be set up and controlled using the V_PORT/I_PORT method described in [Writing an ASIC Config File](/fundamentals/Writing an ASIC Config File.md). The "channel" name referred to in that section is the Caribou resource name, for example "PWR_OUT_1" or "BIAS1".
+Caribou voltage and current supplies should be set up and controlled using the V_PORT/I_PORT method described in [Writing an ASIC Config File](</fundamentals/Writing an ASIC Config File.md>). The "channel" name referred to in that section is the Caribou resource name, for example "PWR_OUT_1" or "BIAS1".
 
 **NOTE:** As of 10/17/2024, it is confirmed that Spacely-Caribou control works for "PWR_OUT" resources, but other resources may or may not work.
 
