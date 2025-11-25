@@ -2,7 +2,7 @@
 
 **Windows:** Download and install Python from https://www.python.org/downloads/release/python-3114/
 
-**Linux:** Install Python via your package manager if it is not already installed. NOTE: If you are using an old operating system (for example **Scientific Linux 7**) which does not have Python 3.11 available via package manager, you will need to build it from source. Once you have a Python binary built for your operating system, you can point your Spacely virtual environment to it
+**Linux:** Install Python via your package manager if it is not already installed. NOTE: If you are using an old operating system (for example **Scientific Linux 7**) which does not have Python 3.11 available via package manager, you will need to build it from source. Once you have a Python binary built for your operating system, you can point your Spacely virtual environment to it in Step 4(a).
 
 **Important Notes:**
 1. Make sure that you are using 64-bit Python (not 32-bit),
@@ -43,7 +43,11 @@ Run the appropriate setup script based on your operating system (SetupWindows.ps
 
 As long as Python 3.11 is on the system path, the setup script will create a virtual environment in the *venv* folder by running ```python -m venv venv``` and activate it by running ```.\venv\Scripts\activate```.
 
-**If you built your own Python from source in Step 1,** you should manually create the venv by running ```/path/to/your/python -m venv venv```.
+**If you built your own Python from source in Step 1,** you should manually create the venv by running 
+
+```
+/path/to/your/python -m venv venv
+```
 
 ## Step 4(b): Python Library Installation 
 
@@ -55,7 +59,10 @@ The setup script will download and install all the necessary python libraries wh
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-**If you are running on Scientific Linux 7** or any computer using an old version of GCC, you may not be able to successfully build matplotlib. You will need to independently build a matplotlib wheel for your operating system and then install it by running ```pip install "matplotlib==3.7.2" --only-binary=:all:```
+**If you are running on Scientific Linux 7** or any computer using an old version of GCC, you may not be able to successfully build matplotlib. You will need to independently build a matplotlib wheel for your operating system and then install it by running 
+```
+pip install "matplotlib==3.7.2" --only-binary=:all:
+```
 
 ## Step 4(c): Installation of py-libs-common
 
