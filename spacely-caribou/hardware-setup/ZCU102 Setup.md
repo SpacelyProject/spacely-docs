@@ -128,6 +128,30 @@ If this is not the first time you have booted petalinux, you may see a warning w
 
 **Skip this step if:** You have already built peary on the ZCU102 in the past.
 
+To prepare to build Peary (you will only need to do this once):
+
+1. Clone the **aq_dev** branch of the Peary repo from https://gitlab.cern.ch/adquinn/peary/-/tree/aq_dev?ref_type=heads 
+2. SCP the Peary repo to the ZCU102
+3. Download the **cmake** linux installer from the internet and SCP it to the ZCU102. 
+``` scp cmake-3.29.0-rc4-linux-aarch64.sh petalinux@192.168.1.24:/home/petalinux/ ```
+4. Install cmake by running the install script.
+5. Make a **/build/** directory in the peary repo and cd into it (so you are now in **/peary/build** ).
+6. Run ```cmake -DBUILD_XXX=ON -DINTERFACE_IIO=OFF -DINTERFACE_MEDIA=OFF ..``` where "XXX" is the name of your Peary device.
+
+Note #1: If make is not found, you may have to include the path to where the cmake binary is installed.
+
+Note #2: If you are running without the CaR board, also include the flag –DINTERFACE_I2C=OFF, otherwise it will fail trying to get the CaR board serial number from EEPROM.
+
+
+To actually build Peary (you will need to do this every time you make a modification to your Peary device):
+1. Run ```sudo make -j4 install```
+
+Note: make relies on the system clock in order to determine which dependencies to build. The ZCU102's system clock may be reset during power cycles, resulting in make believing that some files are from the future.
+
+Workaround #1: Edit the system clock e.g. by ```sudo date --set='+1day’```
+
+Workaround #2: Manually update the edit time of all Peary files with ```sudo find . -type f -exec touch {} +```
+
 
 ## Flash Firmware Image to the ZCU102
 
